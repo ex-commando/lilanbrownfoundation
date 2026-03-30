@@ -1,0 +1,79 @@
+/* Responsive Layouts */
+@media (max-width: 1024px) {
+  h1 { font-size: 3.5rem !important; }
+  h2 { font-size: 2.5rem !important; }
+  .grid-container {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+  }
+}
+
+@media (max-width: 768px) {
+  h1 { font-size: 2.5rem !important; }
+  h2 { font-size: 2rem !important; }
+  
+  section { padding: 60px 5% !important; }
+  
+  .container {
+    display: block !important;
+  }
+  
+  .container > div {
+    margin-bottom: 40px;
+    width: 100% !important;
+  }
+  
+  .desktop-menu {
+    display: none !important;
+  }
+  
+  .mobile-toggle {
+    display: block !important;
+  }
+
+  .Hero-container {
+      flex-direction: column !important;
+  }
+
+  /* Specific component overrides for mobile */
+  #home .container, 
+  #about .container,
+  #governance .container,
+  #transparency .container,
+  #contact .container {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+}
+
+.App {
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-light);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary);
+}
+
+/* Animations */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.floating {
+  animation: float 3s ease-in-out infinite;
+}

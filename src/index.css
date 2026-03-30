@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --primary: #ed1e79;
+  --primary-dark: #c2185b;
+  --primary-light: #f06292;
+  --secondary: #58595b;
+  --white: #ffffff;
+  --accent: #939598;
+  --bg-light: #fdf2f8;
+  --bg-white: #ffffff;
+  --text-dark: #1f2937;
+  --text-light: #4b5563;
+  --font-main: 'Outfit', 'Inter', sans-serif;
+  --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-main);
+  background: var(--white);
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+.App {
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+}
+
+h1, h2, h3 { line-height: 1.1; }
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--transition);
+  cursor: pointer;
+  border: none;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: var(--white);
+}
+
+.btn-primary:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(237, 30, 121, 0.3);
+}
+
+.btn-outline {
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  background: transparent;
+}
+
+.btn-outline:hover {
+  background: var(--primary);
+  color: var(--white);
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.card {
+  background: var(--white);
+  border-radius: 30px;
+  padding: 40px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.05);
+  transition: var(--transition);
+}
+
+.card:hover { transform: translateY(-10px); }
+
+/* Responsive Overrides */
+.mobile-toggle { display: none; }
+
+@media (max-width: 1024px) {
+  h1 { font-size: 4rem; }
+  .desktop-menu { display: none !important; }
+  .mobile-toggle { display: block !important; }
+}
+
+@media (max-width: 768px) {
+  h1 { font-size: 3rem; }
+  p { font-size: 1.1rem; }
+  section { padding: 80px 5% !important; }
+}
+
+/* Animations */
+@keyframes floating {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.floating {
+  animation: floating 3s ease-in-out infinite;
+}
