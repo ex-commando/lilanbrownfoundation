@@ -68,4 +68,4 @@ src/
 
 ---
 
-*Built with ❤️ for empowerment by Antigravity AI.*
+*Built with ❤️ for empowerment by Fnets Technologies Ltd*
