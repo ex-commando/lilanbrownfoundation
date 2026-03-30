@@ -26,6 +26,7 @@ body {
   background: var(--white);
   color: var(--text-dark);
   line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
 }
 
 .App {
@@ -36,9 +37,12 @@ body {
   max-width: 1400px;
   margin: 0 auto;
   position: relative;
+  width: 90%;
 }
 
-h1, h2, h3 { line-height: 1.1; }
+h1 { font-size: clamp(2.5rem, 8vw, 6rem); line-height: 1.05; }
+h2 { font-size: clamp(2rem, 5vw, 4rem); line-height: 1.1; }
+h3 { font-size: clamp(1.2rem, 3vw, 2.5rem); line-height: 1.2; }
 
 .text-gradient {
   background: linear-gradient(135deg, var(--primary), var(--secondary));
@@ -56,6 +60,7 @@ h1, h2, h3 { line-height: 1.1; }
   transition: var(--transition);
   cursor: pointer;
   border: none;
+  text-align: center;
 }
 
 .btn-primary {
@@ -88,34 +93,54 @@ h1, h2, h3 { line-height: 1.1; }
 .card {
   background: var(--white);
   border-radius: 30px;
-  padding: 40px;
+  padding: 30px;
   box-shadow: 0 15px 40px rgba(0,0,0,0.05);
   transition: var(--transition);
 }
 
-.card:hover { transform: translateY(-10px); }
+.card:hover { transform: translateY(-5px); }
+
+section {
+  padding: clamp(60px, 10vw, 120px) 0;
+}
 
 /* Responsive Overrides */
+.desktop-menu { display: flex; }
 .mobile-toggle { display: none; }
 
-@media (max-width: 1024px) {
-  h1 { font-size: 4rem; }
+@media (max-width: 1100px) {
   .desktop-menu { display: none !important; }
   .mobile-toggle { display: block !important; }
 }
 
 @media (max-width: 768px) {
-  h1 { font-size: 3rem; }
-  p { font-size: 1.1rem; }
-  section { padding: 80px 5% !important; }
+  .container { width: 92%; }
+  
+  .grid-container {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
 }
 
 /* Animations */
 @keyframes floating {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+  50% { transform: translateY(-8px); }
 }
 
 .floating {
   animation: floating 3s ease-in-out infinite;
+}
+
+/* Fix Hero content alignment on mobile */
+#home .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 480px) {
+  .btn { width: 100%; margin-bottom: 10px; }
+  #home p { font-size: 1.1rem !important; }
 }

@@ -35,9 +35,9 @@ const Navbar = () => {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',
-    padding: isScrolled ? '15px 5%' : '25px 5%',
+    padding: isScrolled ? '12px 5%' : '20px 5%',
     transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
-    background: isScrolled ? 'rgba(255, 255, 255, 0.95)' : 'transparent',
+    background: isScrolled ? 'rgba(255, 255, 255, 0.98)' : 'transparent',
     backdropFilter: isScrolled ? 'blur(15px)' : 'none',
     boxShadow: isScrolled ? '0 10px 30px rgba(0,0,0,0.08)' : 'none',
     borderBottom: isScrolled ? '1px solid rgba(237, 30, 121, 0.1)' : 'none',
@@ -54,14 +54,14 @@ const Navbar = () => {
     <nav style={navStyle}>
       <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: '15px', textDecoration: 'none' }}>
         <img src={logo} alt="Lilian Brown Foundation" style={{ 
-          height: isScrolled ? '45px' : '55px', 
+          height: isScrolled ? '40px' : '50px', 
           transition: 'all 0.4s',
           filter: (location.pathname === '/' && !isScrolled) ? 'brightness(0) invert(1)' : 'none' 
         }} />
       </Link>
 
       {/* Desktop Menu */}
-      <div style={{ display: 'flex', gap: '40px', alignItems: 'center' }} className="desktop-menu">
+      <div style={{ display: 'flex', gap: '30px', alignItems: 'center' }} className="desktop-menu">
         {navLinks.map((link) => (
           <Link
             key={link.name}
@@ -70,7 +70,7 @@ const Navbar = () => {
               textDecoration: 'none',
               color: location.pathname === link.href ? 'var(--primary)' : linkColor,
               fontWeight: '600',
-              fontSize: '1rem',
+              fontSize: '0.95rem',
               transition: 'all 0.3s',
               borderBottom: location.pathname === link.href ? '2px solid var(--primary)' : '2px solid transparent',
               paddingBottom: '5px'
@@ -83,8 +83,8 @@ const Navbar = () => {
           to="/contact" 
           className="btn btn-primary" 
           style={{ 
-            padding: '12px 28px', 
-            fontSize: '1rem',
+            padding: '10px 22px', 
+            fontSize: '0.9rem',
             background: (location.pathname === '/' && !isScrolled) ? 'white' : 'var(--primary)',
             color: (location.pathname === '/' && !isScrolled) ? 'var(--primary)' : 'white'
           }}
@@ -93,13 +93,13 @@ const Navbar = () => {
         </Link>
       </div>
 
-      {/* Mobile Toggle */}
+      {/* Mobile Toggle Icons */}
       <div 
         className="mobile-toggle" 
         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} 
-        style={{ cursor: 'pointer', color: linkColor }}
+        style={{ cursor: 'pointer', color: linkColor, zIndex: 1001 }}
       >
-        {isMobileMenuOpen ? <X size={32} /> : <Menu size={32} />}
+        {isMobileMenuOpen ? <X size={32} style={{ color: 'var(--text-dark)' }} /> : <Menu size={32} />}
       </div>
 
       {/* Mobile Menu Panel */}
@@ -120,30 +120,61 @@ const Navbar = () => {
               zIndex: 999,
               display: 'flex',
               flexDirection: 'column',
-              padding: '100px 5% 40px 5%',
-              gap: '20px'
+              padding: '100px 8% 40px 8%',
+              gap: '15px'
             }}
           >
+            {/* Dedicated Close Button in Menu */}
+            <div 
+              style={{ 
+                position: 'absolute', 
+                top: '25px', 
+                right: '5%', 
+                padding: '10px',
+                cursor: 'pointer',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '8px',
+                color: 'var(--text-dark)',
+                fontWeight: '600'
+              }}
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              <span style={{ fontSize: '0.9rem', textTransform: 'uppercase' }}>Close</span>
+              <X size={28} />
+            </div>
+
+            <div style={{ marginBottom: '30px' }}>
+              <img src={logo} alt="Lilian Brown Foundation" style={{ height: '50px' }} />
+            </div>
+
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 to={link.href}
                 style={{
                   textDecoration: 'none',
-                  color: 'var(--text-dark)',
-                  fontSize: '2rem',
+                  color: location.pathname === link.href ? 'var(--primary)' : 'var(--text-dark)',
+                  fontSize: '1.75rem',
                   fontWeight: '700',
-                  padding: '15px 0',
+                  padding: '12px 0',
                   borderBottom: '1px solid rgba(0,0,0,0.05)'
                 }}
               >
                 {link.name}
               </Link>
             ))}
+            
             <div style={{ marginTop: 'auto', textAlign: 'center' }}>
-                <p style={{ color: 'var(--accent)', marginBottom: '15px' }}>RC: 9197336</p>
-                <Link to="/contact" className="btn btn-primary" style={{ width: '100%', fontSize: '1.2rem', padding: '15px' }}>
-                  Donate Now
+                <div style={{ display: 'flex', justifyContent: 'center', gap: '20px', marginBottom: '30px' }}>
+                   {/* Social placeholders for mobile menu */}
+                   <div style={{ padding: '12px', borderRadius: '50%', background: 'var(--bg-light)', color: 'var(--primary)' }}><Heart size={20} /></div>
+                   <div style={{ padding: '12px', borderRadius: '50%', background: 'var(--bg-light)', color: 'var(--primary)' }}><Heart size={20} /></div>
+                   <div style={{ padding: '12px', borderRadius: '50%', background: 'var(--bg-light)', color: 'var(--primary)' }}><Heart size={20} /></div>
+                </div>
+                <p style={{ color: 'var(--accent)', marginBottom: '20px', fontSize: '0.9rem' }}>RC: 9197336 | Abuja, Nigeria</p>
+                <Link to="/contact" className="btn btn-primary" style={{ width: '100%', fontSize: '1.1rem', padding: '18px' }}>
+                  Donate & Support
                 </Link>
             </div>
           </motion.div>
