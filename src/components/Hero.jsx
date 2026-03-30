@@ -132,7 +132,7 @@ const Hero = () => {
           <p style={{ fontSize: '1.6rem', color: 'rgba(255,255,255,0.95)', marginBottom: '45px', maxWidth: '700px', margin: '0 auto 45px auto', fontWeight: '400', textShadow: '0 2px 4px rgba(0,0,0,0.3)' }}>
             {slides[current].tagline}
           </p>
-          <div style={{ display: 'flex', gap: '25px', justifyContent: 'center' }}>
+          <div className="hero-btns" style={{ display: 'flex', gap: '25px', justifyContent: 'center' }}>
             <a href="/about" className="btn btn-primary" style={{ padding: '18px 45px', fontSize: '1.2rem', boxShadow: '0 10px 30px rgba(237, 30, 121, 0.4)' }}>
               Explore Our Story <ArrowRight size={22} style={{ marginLeft: '12px', verticalAlign: 'middle' }} />
             </a>
