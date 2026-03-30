@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Heart, ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 import hero1 from '../assets/hero_1.png'; // New first slide image
 import hero2 from '../assets/education.png';
@@ -133,12 +134,12 @@ const Hero = () => {
             {slides[current].tagline}
           </p>
           <div className="hero-btns" style={{ display: 'flex', gap: '25px', justifyContent: 'center' }}>
-            <a href="/about" className="btn btn-primary" style={{ padding: '18px 45px', fontSize: '1.2rem', boxShadow: '0 10px 30px rgba(237, 30, 121, 0.4)' }}>
+            <Link to="/about" className="btn btn-primary" style={{ padding: '18px 45px', fontSize: '1.2rem', boxShadow: '0 10px 30px rgba(237, 30, 121, 0.4)' }}>
               Explore Our Story <ArrowRight size={22} style={{ marginLeft: '12px', verticalAlign: 'middle' }} />
-            </a>
-            <a href="/contact" className="btn btn-outline" style={{ borderColor: 'white', color: 'white', padding: '18px 45px', fontSize: '1.2rem', backdropFilter: 'blur(5px)' }}>
+            </Link>
+            <Link to="/contact" className="btn btn-outline" style={{ borderColor: 'white', color: 'white', padding: '18px 45px', fontSize: '1.2rem', backdropFilter: 'blur(5px)' }}>
               Get Involved
-            </a>
+            </Link>
           </div>
           <p style={{ marginTop: '40px', fontSize: '1rem', color: 'rgba(255,255,255,0.7)', fontWeight: '500' }}>
             CAC: <span style={{ color: 'var(--primary-light)' }}>9197336</span> | Registered NGO
