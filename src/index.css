@@ -104,6 +104,12 @@ section {
   padding: clamp(60px, 10vw, 120px) 0;
 }
 
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+}
+
 /* Responsive Overrides */
 .desktop-menu { display: flex; }
 .mobile-toggle { display: none; }

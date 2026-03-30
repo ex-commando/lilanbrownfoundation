@@ -26,7 +26,7 @@ const Financials = () => {
           We are committed to absolute honesty and accountability in how we manage and utilize our resources.
         </p>
 
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '50px', textAlign: 'left' }}>
+        <div className="grid-container" style={{ textAlign: 'left' }}>
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
