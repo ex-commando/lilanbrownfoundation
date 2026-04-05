@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import AboutPage from './pages/AboutPage';
 import GovernancePage from './pages/GovernancePage';
 import ContactPage from './pages/ContactPage';
+import GalleryPage from './pages/GalleryPage';
 import './App.css';
 
 // Simple Transparency page to complete navigation
@@ -48,6 +49,7 @@ function App() {
           <Route path="/governance" element={<GovernancePage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/transparency" element={<TransparencyPage />} />
+          <Route path="/photo-book" element={<GalleryPage />} />
         </Routes>
         <Footer />
       </div>
