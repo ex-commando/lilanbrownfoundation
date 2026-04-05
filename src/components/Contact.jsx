@@ -64,8 +64,8 @@ const Contact = () => {
                 <div>
                    <h4 style={{ fontSize: '1.3rem', marginBottom: '5px' }}>Elvis Abuyere</h4>
                    <p style={{ color: 'var(--primary)', fontWeight: '600', marginBottom: '10px' }}>Chairman</p>
-                   <a href="tel:+2347034742049" style={{ textDecoration: 'none', color: 'var(--text-light)', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                     <Phone size={16} /> +234 703 474 2049
+                   <a href="tel:+2349167788775" style={{ textDecoration: 'none', color: 'var(--text-light)', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                     <Phone size={16} /> +234 916 778 8775
                    </a>
                 </div>
              </div>
@@ -77,8 +77,8 @@ const Contact = () => {
                 <div>
                    <h4 style={{ fontSize: '1.3rem', marginBottom: '5px' }}>Sandra Odaudu</h4>
                    <p style={{ color: 'var(--secondary)', fontWeight: '600', marginBottom: '10px' }}>Secretary</p>
-                   <a href="tel:+2348023144712" style={{ textDecoration: 'none', color: 'var(--text-light)', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                     <Phone size={16} /> +234 802 314 4712
+                   <a href="tel:+2349167788775" style={{ textDecoration: 'none', color: 'var(--text-light)', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                     <Phone size={16} /> +234 916 778 8775
                    </a>
                 </div>
              </div>
