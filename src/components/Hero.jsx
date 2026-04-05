@@ -3,19 +3,12 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Heart, ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-import heroSlide1 from '../assets/hero_slide1.jpg';
 import heroSlide2 from '../assets/hero_slide2.jpg';
 import heroSlide3 from '../assets/hero_slide3.jpg';
 import heroSlide4 from '../assets/hero_slide4.jpg';
 import heroSlide5 from '../assets/hero_slide5.jpg';
 
 const slides = [
-  {
-    image: heroSlide1,
-    title: 'Empowering',
-    subtitle: 'Women',
-    tagline: 'Leading the charge for vulnerable groups through focused advocacy and direct support.',
-  },
   {
     image: heroSlide2,
     title: 'Sustainable',

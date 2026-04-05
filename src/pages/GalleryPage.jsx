@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Camera, Zap, Users, Heart } from 'lucide-react';
 
-import g1 from '../assets/gallery/gallery_1.jpg';
 import g2 from '../assets/gallery/gallery_2.jpg';
 import g3 from '../assets/gallery/gallery_3.jpg';
 import g4 from '../assets/gallery/gallery_4.jpg';
@@ -14,7 +13,6 @@ import g9 from '../assets/gallery/gallery_9.jpg';
 import g10 from '../assets/gallery/gallery_10.jpg';
 
 const galleryItems = [
-  { id: 1, image: g1, title: 'Advocacy meeting' },
   { id: 2, image: g2, title: 'Community Outreach' },
   { id: 3, image: g3, title: 'Panel discussion' },
   { id: 4, image: g4, title: 'Women Empowerment Meeting' },
